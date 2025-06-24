@@ -1,13 +1,13 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const comingSoon = document.querySelector('.coming-soon');
-  if (comingSoon) {
-    comingSoon.textContent = 'Conversations start here...';
-  }
-  // Launch timeline transition
-  const timeline = document.querySelector('.launch-timeline');
-  if (timeline) {
-    setTimeout(() => {
-      timeline.classList.add('visible');
-    }, 1200);
-  }
-}); 
+document.getElementById("submitButton").addEventListener("click", function() {
+    var email = document.getElementById("emailInput").value;
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var errorMessage = document.getElementById("errorMessage");
+
+    if (!emailPattern.test(email)) {
+        errorMessage.style.display = "block";
+    } else {
+        errorMessage.style.display = "none";
+        // E-posta geçerli, devam edebilirsiniz.
+    }
+});
+
